@@ -16,3 +16,12 @@ C:\Users\Administrator.AZ\Desktop\文件生成器\文件生成器\obj\Debug\文�
 C:\Users\Administrator.AZ\Desktop\文件生成器\文件生成器\obj\Debug\文件生成器.exe
 C:\Users\Administrator.AZ\Desktop\文件生成器\文件生成器\obj\Debug\文件生成器.pdb
 C:\Users\Administrator.AZ\Desktop\文件生成器\文件生成器\obj\Debug\文件生成器.csprojAssemblyReference.cache
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\bin\Debug\PVF_File_Quest.exe
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\bin\Debug\PVF_File_Quest.pdb
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\文件生成器.csprojAssemblyReference.cache
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\文件生成器.Form1.resources
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\PVF_File_Quest.Properties.Resources.resources
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\文件生成器.csproj.GenerateResource.cache
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\文件生成器.csproj.CoreCompileInputs.cache
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\PVF_File_Quest.exe
+C:\Users\Administrator.AZ\Desktop\PVF_File_Quest-main\文件生成器\obj\Debug\PVF_File_Quest.pdb

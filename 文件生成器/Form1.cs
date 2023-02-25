@@ -42,11 +42,11 @@ namespace 文件生成器
             }
             //任务要求
             {
-                comboBox3.Items.Add("对话");
-                comboBox3.Items.Add("收集");
-                comboBox3.Items.Add("强化");
-                comboBox3.Items.Add("击杀");
-                comboBox3.Items.Add("寻人");
+                comboBox3.Items.Add("对话"    );
+                comboBox3.Items.Add("收集"    );
+                comboBox3.Items.Add("强化"    );
+                comboBox3.Items.Add("击杀"    );
+                comboBox3.Items.Add("寻人"    );
                 comboBox3.Items.Add("通关模板");
                 comboBox3.Items.Add("收集模板");
                 comboBox3.Items.Add("寻人模板");
@@ -54,16 +54,16 @@ namespace 文件生成器
             }
             //任务条件
             {
-                comboBox4.Items.Add("不限");
-                comboBox4.Items.Add("通关时间");
-                comboBox4.Items.Add("被击数");
+                comboBox4.Items.Add("不限"      );
+                comboBox4.Items.Add("通关时间"  );
+                comboBox4.Items.Add("被击数"    );
                 comboBox4.Items.Add("不用复活币");
-                comboBox4.Items.Add("组队人数");
-                comboBox4.Items.Add("难度");
+                comboBox4.Items.Add("组队人数"  );
+                comboBox4.Items.Add("难度"      );
                 comboBox4.Items.Add("连击杀伤率");
-                comboBox4.Items.Add("背击数");
-                comboBox4.Items.Add("破招数");
-                comboBox4.Items.Add("连击数");
+                comboBox4.Items.Add("背击数"    );
+                comboBox4.Items.Add("破招数"    );
+                comboBox4.Items.Add("连击数"    );
                 comboBox4.Items.Add("全图房间数");
                 comboBox4.Items.Add("群体攻击数");
             }
