@@ -63,6 +63,11 @@ namespace 文件生成器
                 comboBox5.Items.Add("全部");
                 comboBox5.Items.Add("两者");
             }
+            //任务是否可放弃
+            {
+                comboBox6.Items.Add("可以放弃");
+                comboBox6.Items.Add("不可放弃");
+            }
         }
 
         //qst分类 (label1.Text) - 已初始化
@@ -160,6 +165,10 @@ namespace 文件生成器
                     label19.Text = "";
                     label20.Text = "";
                     label20.Enabled = false;
+                    label53.Text = "";
+                    label53.Enabled = false;
+                    label54.Text = "";
+                    label54.Enabled = false;
                     textBox8.Text = "";
                     textBox8.Enabled = false;
                     label19.Text = "";
@@ -168,6 +177,10 @@ namespace 文件生成器
                     textBox7.Enabled = false;
                     textBox6.Text = "";
                     textBox6.Enabled = false;
+                    textBox27.Text = "";
+                    textBox27.Enabled = false;
+                    textBox28.Text = "";
+                    textBox28.Enabled = false;
                 }
             }
             else if (comboBox3.Text == "收集")
@@ -198,6 +211,10 @@ namespace 文件生成器
                     label19.Text = "";
                     label20.Text = "";
                     label20.Enabled = false;
+                    label53.Text = "";
+                    label53.Enabled = false;
+                    label54.Text = "";
+                    label54.Enabled = false;
                     textBox8.Text = "";
                     textBox8.Enabled = false;
                     label19.Text = "";
@@ -206,6 +223,10 @@ namespace 文件生成器
                     textBox7.Enabled = false;
                     textBox6.Text = "";
                     textBox6.Enabled = false;
+                    textBox27.Text = "";
+                    textBox27.Enabled = false;
+                    textBox28.Text = "";
+                    textBox28.Enabled = false;
                 }
             }
             else if (comboBox3.Text == "通关")
@@ -239,6 +260,10 @@ namespace 文件生成器
                     label19.Text = "";
                     label20.Text = "";
                     label20.Enabled = false;
+                    label53.Text = "";
+                    label53.Enabled = false;
+                    label54.Text = "";
+                    label54.Enabled = false;
                     textBox8.Text = "";
                     textBox8.Enabled = false;
                     label19.Text = "";
@@ -247,6 +272,10 @@ namespace 文件生成器
                     textBox7.Enabled = false;
                     textBox6.Text = "";
                     textBox6.Enabled = false;
+                    textBox27.Text = "";
+                    textBox27.Enabled = false;
+                    textBox28.Text = "";
+                    textBox28.Enabled = false;
                 }
             }
         }
@@ -257,14 +286,27 @@ namespace 文件生成器
             if (comboBox4.Text == "击杀怪物掉落")
             {
                 label18.Text = "怪物 ID";
+                label18.Enabled = true;
                 label19.Text = "掉落物品 ID";
+                label19.Enabled = true;
                 label20.Text = "副本 ID";
+                label20.Enabled = true;
+                label53.Text = "任务物品 ID";
+                label53.Enabled = true;
+                label54.Text = "任务物品 数量";
+                label54.Enabled = true;
                 textBox8.Text = "";
                 textBox7.Text = "";
                 textBox6.Text = "";
-                label20.Enabled = true;
+                textBox6.Enabled = true;
+                textBox27.Text = "";
+                textBox27.Enabled = true;
+                textBox28.Text = "";
+                textBox28.Enabled = true;
+
+
                 textBox8.Enabled = true;
-                label19.Enabled = true;
+
                 textBox7.Enabled = true;
 
             }
@@ -276,6 +318,10 @@ namespace 文件生成器
                 label19.Text = "";
                 textBox7.Text = "";
                 textBox6.Text = "";
+                label53.Text = "";
+                label54.Text = "";
+                textBox27.Text = "";
+                textBox28.Text = "";
                 textBox6.Enabled = true;
                 label18.Enabled = true;
                 label20.Enabled = false;
@@ -292,6 +338,12 @@ namespace 文件生成器
                 textBox8.Text = "";
                 textBox7.Text = "";
                 textBox6.Text = "";
+                label53.Text = "";
+                label54.Text = "";
+                textBox27.Text = "";
+                textBox28.Text = "";
+                textBox27.Enabled = false;
+                textBox28.Enabled = false;
                 label18.Enabled = true;
                 label19.Enabled = true;
                 label20.Enabled = false;
@@ -313,6 +365,17 @@ namespace 文件生成器
         //预览输出 - 简体(richTextBox1.Text) - 编辑中...
         private void Button1_Click(object sender, EventArgs e)
         {
+            //任务是否可以放弃
+            {
+                if (comboBox6.Text == "可以放弃")
+                {
+                    label56.Text = "" ;
+                }
+                else if (comboBox6.Text == "不可放弃")
+                {
+                    label56.Text = "[cant giveup]" + "\n" + "\t" + "1" + "\n" + "\n";
+                }
+            }
             //QP任务点 (label51.Text) - 已初始化
             {
                 if (textBox26.Text == "")
@@ -326,12 +389,25 @@ namespace 文件生成器
             }
             //发布NPC&对话NPC (label40.Text label41.Text) - 已初始化
             {
-                if (label40.Text == "" && label41.Text == "")
+                if      (textBox5.Text == "" && textBox25.Text == "")
                 {
                     label40.Text = "[npc index]" + "\n" + "\t" + "2" + "\n" + "\n";
+
                     label41.Text = "[complete npc index]" + "\n" + "\t" + "-1" + "\n" + "\n";
                 }
-                else
+                else if (textBox5.Text == "" && textBox25.Text != "")
+                {
+                    label40.Text = "[npc index]" + "\n" + "\t" + "2" + "\n" + "\n";
+
+                    label41.Text = "[complete npc index]" + "\n" + "\t" + textBox25.Text + "\n" + "\n";
+                }
+                else if (textBox5.Text != "" && textBox25.Text == "")
+                {
+                    label40.Text = "[npc index]" + "\n" + "\t" + textBox5.Text + "\n" + "\n";
+
+                    label41.Text = "[complete npc index]" + "\n" + "\t" + "-1" + "\n" + "\n";
+                }
+                else if (textBox5.Text != "" && textBox25.Text != "")
                 {
                     label40.Text = "[npc index]" + "\n" + "\t" + textBox5.Text + "\n" + "\n";
                     label41.Text = "[complete npc index]" + "\n" + "\t" + textBox25.Text + "\n" + "\n";
@@ -340,12 +416,20 @@ namespace 文件生成器
 
             //等级区间 (label42.Text) - 已初始化
             {
-                if (textBox2.Text == "" && textBox3.Text == "")
+                if      (textBox2.Text == "" && textBox3.Text == "")
                 {
-                    label42.Text = "[level]" + "\n" + "\t" + "1" + "\t" + "1000" + "\n" + "\n";
+                    label42.Text = "[level]" + "\n" + "\t" + "1"           + "\t" + "1000"        + "\n" + "\n";
                 }
-                else
+                else if (textBox2.Text == "" && textBox3.Text != "")
                 { 
+                    label42.Text = "[level]" + "\n" + "\t" + "1"           + "\t" + textBox3.Text + "\n" + "\n";
+                }
+                else if (textBox2.Text != "" && textBox3.Text == "")
+                {
+                    label42.Text = "[level]" + "\n" + "\t" + textBox2.Text + "\t" + "1000"        + "\n" + "\n";
+                }
+                else if (textBox2.Text != "" && textBox3.Text != "")
+                {
                     label42.Text = "[level]" + "\n" + "\t" + textBox2.Text + "\t" + textBox3.Text + "\n" + "\n";
                 }
             }
@@ -550,8 +634,8 @@ namespace 文件生成器
             {
                 if      (comboBox5.Text == "选择")
                 {
-                    label43.Text = "[reward int data]"     + "\n" +
-                                   "[/reward int data]"    + "\n" + "\n" +
+                    label43.Text = "[reward int data]"            + "\n" +
+                                   "[/reward int data]"           + "\n" + "\n" +
                                    "[reward selection int data]"  + "\n" +
                                     label3.Text +  label4.Text    +
                                    label45.Text + label46.Text    +
@@ -561,7 +645,7 @@ namespace 文件生成器
                 }
                 else if (comboBox5.Text == "全部")
                 {
-                    label43.Text = "[reward int data]"     + "\n" +
+                    label43.Text = "[reward int data]"            + "\n" +
                                      label3.Text +  label4.Text   +
                                     label45.Text + label46.Text   +
                                     label47.Text + label48.Text   +
@@ -572,7 +656,7 @@ namespace 文件生成器
                 }
                 else if (comboBox5.Text == "两者")
                 {
-                    label43.Text = "[reward int data]"     + "\n" +
+                    label43.Text = "[reward int data]"            + "\n" +
                                     label3.Text +  label4.Text    +
                                    label45.Text + label46.Text    + "\n" +
                                    "[/reward int data]"    + "\n" + "\n" +
@@ -593,18 +677,70 @@ namespace 文件生成器
                     }
                     else
                     {
-                        label41.Text = "[complete npc index]" + "\n" + "\t" + textBox6.Text + "\n" + "\n"; 
-                        label52.Text = "[type]"        + "\n" + "\t" + "`[meet npc]`" + "\n" + "\n" +
-                                       "[sub type]"    + "\n" + "\t" + "-1" + "\n"    + "\n" +
-                                       "[int data]"    + "\n" + "\t" + textBox6.Text + "\n" + 
+                        label41.Text = "[complete npc index]" + "\n" + "\t" + textBox6.Text + "\n" + "\n" ; 
+                        label52.Text = "[type]"        + "\n" + "\t" + "`[meet npc]`"       + "\n" + "\n" +
+                                       "[sub type]"    + "\n" + "\t" + "-1"                 + "\n" + "\n" +
+                                       "[int data]"    + "\n" + "\t" + textBox6.Text        + "\n" + 
+                                       "[/int data]"                                        + "\n" + "\n" +
+                                       "[reward type]" + "\n" + "\t" + "`[item]`"           + "\n" + "\n" ;
+                    }
+                }
+            }
+
+            //对话 - 材料
+            {
+                if (comboBox4.Text == "材料")
+                {
+                    if (textBox6.Text == "" && textBox7.Text == "")
+                    {
+                        MessageBox.Show("请填入物品ID与数量！", "警告！");
+                    }
+                    else if (textBox6.Text != "" && textBox7.Text == "")
+                    {
+                        MessageBox.Show("请填入物品数量！", "警告！");
+                    }
+                    else if (textBox6.Text == "" && textBox7.Text != "")
+                    {
+                        MessageBox.Show("请填入物品ID ！", "警告！");
+                    }
+                    else if (textBox6.Text != "" && textBox7.Text != "")
+                    {
+                        label52.Text = "[type]"        + "\n" + "\t" + "`[seeking]`" + "\n" + "\n" +
+                                       "[sub type]"    + "\n" + "\t" + "-1"          + "\n" + "\n" +
+                                       "[int data] "   + "\n" + "\t" + textBox6.Text + "\t" + textBox7.Text + "\n" +
                                        "[/int data]"   + "\n" + "\n" +
-                                       "[reward type]" + "\n" + "\t" + "`[item]`"     + "\n" + "\n" ;
+                                       "[reward type]" + "\n" + "\t" + "`[item]`"    + "\n" + "\n" ;
+                    }
+                }
+            }
+            //对话 - 击杀怪物掉落
+            {
+                if (comboBox4.Text == "击杀怪物掉落")
+                {
+                    if (textBox8.Text == "" && textBox6.Text == "" && textBox7.Text == "")
+                    {
+                        MessageBox.Show("请填入副本ID 、怪物ID 、掉落物品ID ！", "警告！");
+                    }
+                    else if (textBox8.Text =="" || textBox6.Text =="" || textBox7.Text == "")
+                    {
+                        MessageBox.Show("请检查副本ID 、怪物ID 、掉落物品ID ，是否填写完整！", "警告！");
+                    }
+                    else if (textBox8.Text != "" && textBox6.Text != "" && textBox7.Text != "")
+                    {
+                        label52.Text = "[type]	`[seeking]`" +
+                                       "[sub type]	-1" +
+                                       "[int data]	3087	1" +
+                                       "[/int data]" +
+                                       "[reward type]" + "`[item]`" +
+                                       "[clear reward item]" +
+                                       "	2	-1	3087	1	100	1" +
+                                       "[/clear reward item]";
                     }
                 }
             }
             //组合窗体输出 (richTextBox1.Text)
             {
-                if      (comboBox3.Text == "对话" && comboBox4.Text == "寻人")
+                if      (comboBox3.Text == "对话" && comboBox4.Text == "寻人"        )
                 {
                     if (textBox6.Text == "")
                     {
@@ -612,28 +748,85 @@ namespace 文件生成器
                     }
                     else
                     {
-                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label52.Text + label43.Text + label38.Text;
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
                     }
                 }
-                else if (comboBox3.Text == "通关" && comboBox4.Text == "击杀")
+                else if (comboBox3.Text == "收集" && comboBox4.Text == "材料"        )
                 {
-                    richTextBox1.Text = "";
+                    if (textBox6.Text == "" || textBox7.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
                 }
-                else if (comboBox3.Text == "收集" && comboBox4.Text == "击杀指定怪物")
+                else if (comboBox3.Text == "收集" && comboBox4.Text == "击杀怪物掉落")
                 {
-                    richTextBox1.Text = "";
+                    if (textBox8.Text == "" || textBox6.Text == "" || textBox7.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
                 }
-                else if (comboBox3.Text == "通关" && comboBox4.Text == "指定副本")
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "指定副本"    )
                 {
-                    richTextBox1.Text = "";
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
                 }
-                else if (comboBox3.Text == "通关" && comboBox4.Text == "限制消耗品")
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "限时通关"    )
                 {
-                    richTextBox1.Text = "";
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "限制消耗品"  )
+                {
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "击杀怪物"    )
+                {
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
                 }
                 else if (comboBox3.Text == "通关" && comboBox4.Text == "不使用复活币")
                 {
-                    richTextBox1.Text = "";
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "";
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label56.Text + label52.Text + label43.Text + label38.Text;
+                    }
                 }
             }
         }
@@ -700,6 +893,11 @@ namespace 文件生成器
                             "全部：" + "\n" + "\t" + "填入1-8个奖励，任务完成奖励所有。" + "\n" + 
                             "两者：" + "\n" + "\t" + "在1-4填入选择奖励，在5-8填入全部奖励。" + "\n" +
                             "注意：" + "\n" + "\t" + "如果需要添加更多请手动在预览窗口按格式修改添加。Ps：不会修改勿动！" + "\n" , "关于奖励选项");
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
