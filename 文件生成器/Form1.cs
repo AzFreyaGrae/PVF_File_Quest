@@ -44,28 +44,18 @@ namespace 文件生成器
             {
                 comboBox3.Items.Add("对话"    );
                 comboBox3.Items.Add("收集"    );
-                comboBox3.Items.Add("强化"    );
-                comboBox3.Items.Add("击杀"    );
-                comboBox3.Items.Add("寻人"    );
-                comboBox3.Items.Add("通关模板");
-                comboBox3.Items.Add("收集模板");
-                comboBox3.Items.Add("寻人模板");
-                comboBox3.Items.Add("房间模板");
+                comboBox3.Items.Add("通关"    );
             }
             //任务条件
             {
-                comboBox4.Items.Add("不限"      );
-                comboBox4.Items.Add("通关时间"  );
-                comboBox4.Items.Add("被击数"    );
-                comboBox4.Items.Add("不用复活币");
-                comboBox4.Items.Add("组队人数"  );
-                comboBox4.Items.Add("难度"      );
-                comboBox4.Items.Add("连击杀伤率");
-                comboBox4.Items.Add("背击数"    );
-                comboBox4.Items.Add("破招数"    );
-                comboBox4.Items.Add("连击数"    );
-                comboBox4.Items.Add("全图房间数");
-                comboBox4.Items.Add("群体攻击数");
+                comboBox4.Items.Remove("寻人");
+                comboBox4.Items.Remove("击杀怪物掉落");
+                comboBox4.Items.Remove("寻怪并击杀");
+                comboBox4.Items.Remove("指定副本");
+                comboBox4.Items.Remove("限制消耗品");
+                comboBox4.Items.Remove("不使用复活币");
+                comboBox4.Items.Remove("击杀指定怪物");
+                comboBox4.Items.Remove("限时通关");
             }
             //奖励选择
             {
@@ -141,118 +131,174 @@ namespace 文件生成器
             }
         }
 
-        //任务要求
+        //任务要求 (comboBox3.Text) - 已初始化
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if      (comboBox3.Text == "寻人"    )
+            if      (comboBox3.Text == "对话")
             {
-             //  [type]
-             //      `[meet npc]`
-             //
-             //  [sub type]
-             //      -1
-             //
-             //  [int data] 对话NPC
-             //      2
-             //  [/int data]
-             //
-             //  [reward type]
-             //      `[item]`
-            }
-            else if (comboBox3.Text == "收集"    )
-            {
+                //清空状态
+                { 
+                    comboBox4.Items.Remove("寻人");
+                    comboBox4.Items.Remove("击杀怪物掉落");
+                    comboBox4.Items.Remove("材料");
+                    comboBox4.Items.Remove("指定副本");
+                    comboBox4.Items.Remove("限制消耗品");
+                    comboBox4.Items.Remove("不使用复活币");
+                    comboBox4.Items.Remove("击杀指定怪物");
+                    comboBox4.Items.Remove("限时通关");
+                 
+                }
+                comboBox4.Items.Add("寻人");
+                comboBox4.Text = "";
+                if (comboBox4.Text == "寻人")
+                {
 
+                }
+                else
+                {
+                    label18.Text = "";
+                    label19.Text = "";
+                    label20.Text = "";
+                    label20.Enabled = false;
+                    textBox8.Text = "";
+                    textBox8.Enabled = false;
+                    label19.Text = "";
+                    label19.Enabled = false;
+                    textBox7.Text = "";
+                    textBox7.Enabled = false;
+                    textBox6.Text = "";
+                    textBox6.Enabled = false;
+                }
             }
-            else if (comboBox3.Text == "击杀"    )
+            else if (comboBox3.Text == "收集")
             {
-             // [type]
-	         //     `[hunt monster]`
-             //
-             // [sub type]
-             //     -1
-             //
-             // [int data] 副本 难度 怪物 数量
-             //     14	1	700	50	14	1	701	50	14	1	702	1
-             // [/int data]
-             //
-             // [reward type]
-             //     `[item]`
-            }
-            else if (comboBox3.Text == "寻人"    )
-            {
+                //清空状态
+                { 
+                    comboBox4.Items.Remove("寻人");
+                    comboBox4.Items.Remove("击杀怪物掉落");
+                    comboBox4.Items.Remove("材料");
+                    comboBox4.Items.Remove("指定副本");
+                    comboBox4.Items.Remove("限制消耗品");
+                    comboBox4.Items.Remove("不使用复活币");
+                    comboBox4.Items.Remove("击杀指定怪物");
+                    comboBox4.Items.Remove("限时通关");
+                }
+                comboBox4.Items.Add("材料");
+                comboBox4.Items.Add("击杀怪物掉落");
+                comboBox4.Text = "";
 
-            }
-            else if (comboBox3.Text == "房间"    )
-            {
+                if (comboBox4.Text == "材料" || 
+                    comboBox4.Text == "击杀怪物掉落")
+                {
 
+                }
+                else
+                {
+                    label18.Text = "";
+                    label19.Text = "";
+                    label20.Text = "";
+                    label20.Enabled = false;
+                    textBox8.Text = "";
+                    textBox8.Enabled = false;
+                    label19.Text = "";
+                    label19.Enabled = false;
+                    textBox7.Text = "";
+                    textBox7.Enabled = false;
+                    textBox6.Text = "";
+                    textBox6.Enabled = false;
+                }
             }
-            else if (comboBox3.Text == "通关模板")
+            else if (comboBox3.Text == "通关")
             {
+                //清空状态
+                { 
+                    comboBox4.Items.Remove("寻人");
+                    comboBox4.Items.Remove("击杀怪物掉落");
+                    comboBox4.Items.Remove("材料");
+                    comboBox4.Items.Remove("指定副本");
+                    comboBox4.Items.Remove("限制消耗品");
+                    comboBox4.Items.Remove("不使用复活币");
+                    comboBox4.Items.Remove("击杀指定怪物");
+                    comboBox4.Items.Remove("限时通关");
+                }
+                comboBox4.Items.Add("指定副本");
+                comboBox4.Items.Add("限时通关");
+                comboBox4.Items.Add("限制消耗品");
+                comboBox4.Items.Add("不使用复活币");
+                comboBox4.Text = "";
+                if (comboBox4.Text == "指定副本"     || 
+                    comboBox4.Text == "限时通关"     || 
+                    comboBox4.Text == "限制消耗品"   || 
+                    comboBox4.Text == "不使用复活币")
+                {
 
-            }
-            else if (comboBox3.Text == "收集模板")
-            {
-
-            }
-            else if (comboBox3.Text == "寻人模板")
-            {
-
-            }
-            else if (comboBox3.Text == "房间模板")
-            {
-
+                }
+                else
+                {
+                    label18.Text = "";
+                    label19.Text = "";
+                    label20.Text = "";
+                    label20.Enabled = false;
+                    textBox8.Text = "";
+                    textBox8.Enabled = false;
+                    label19.Text = "";
+                    label19.Enabled = false;
+                    textBox7.Text = "";
+                    textBox7.Enabled = false;
+                    textBox6.Text = "";
+                    textBox6.Enabled = false;
+                }
             }
         }
 
         //任务内容
         private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if      (comboBox4.Text == "不限"      )
+            if (comboBox4.Text == "击杀怪物掉落")
             {
+                label18.Text = "怪物 ID";
+                label19.Text = "掉落物品 ID";
+                label20.Text = "副本 ID";
+                textBox8.Text = "";
+                textBox7.Text = "";
+                textBox6.Text = "";
+                label20.Enabled = true;
+                textBox8.Enabled = true;
+                label19.Enabled = true;
+                textBox7.Enabled = true;
 
             }
-            else if (comboBox4.Text == "通关时间"  )
+            else if (comboBox4.Text == "寻人")
             {
+                label18.Text = "寻找的NPC ID";
+                label20.Text = "";
+                textBox8.Text = "";
+                label19.Text = "";
+                textBox7.Text = "";
+                textBox6.Text = "";
+                textBox6.Enabled = true;
+                label18.Enabled = true;
+                label20.Enabled = false;
+                textBox8.Enabled = false;
+                label19.Enabled = false;
+                textBox7.Enabled = false;
 
             }
-            else if (comboBox4.Text == "被击数"    )
+            else if (comboBox4.Text == "材料")
             {
-
-            }
-            else if (comboBox4.Text == "不用复活币")
-            {
-
-            }
-            else if (comboBox4.Text == "组队人数"  )
-            {
-
-            }
-            else if (comboBox4.Text == "难度"      )
-            {
-
-            }
-            else if (comboBox4.Text == "连击杀伤率")
-            {
-
-            }
-            else if (comboBox4.Text == "背击数"    )
-            {
-
-            }
-            else if (comboBox4.Text == "破招数"    )
-            {
-
-            }
-            else if (comboBox4.Text == "连击数"    )
-            {
-
-            }
-            else if (comboBox4.Text == "全图房间数")
-            {
-
-            }
-            else if (comboBox4.Text == "群体攻击数")
-            {
+                label18.Text = "需要材料物品 ID";
+                label19.Text = "需要物品数量";
+                label20.Text = "";
+                textBox8.Text = "";
+                textBox7.Text = "";
+                textBox6.Text = "";
+                label18.Enabled = true;
+                label19.Enabled = true;
+                label20.Enabled = false;
+                textBox8.Enabled = false;
+                label19.Enabled = true;
+                textBox7.Enabled = true;
+                textBox6.Enabled = true;
 
             }
         }
@@ -267,29 +313,60 @@ namespace 文件生成器
         //预览输出 - 简体(richTextBox1.Text) - 编辑中...
         private void Button1_Click(object sender, EventArgs e)
         {
-            //QP任务点
+            //QP任务点 (label51.Text) - 已初始化
             {
-                label51.Text = "[quest point]" + "\n" + "\t" + textBox26.Text + "\n" + "\n";
+                if (textBox26.Text == "")
+                {
+                    label51.Text = "[quest point]" + "\n" + "\t" + "0" + "\n" + "\n";
+                }
+                else
+                { 
+                    label51.Text = "[quest point]" + "\n" + "\t" + textBox26.Text + "\n" + "\n";
+                }
             }
-            //发布NPC&对话NPC (label40.Text) (label41.Text)
+            //发布NPC&对话NPC (label40.Text label41.Text) - 已初始化
             {
-                label40.Text = "[npc index]"          + "\n" + "\t" + textBox5.Text  + "\n" + "\n";
-                label41.Text = "[complete npc index]" + "\n" + "\t" + textBox25.Text + "\n" + "\n";
+                if (label40.Text == "" && label41.Text == "")
+                {
+                    label40.Text = "[npc index]" + "\n" + "\t" + "2" + "\n" + "\n";
+                    label41.Text = "[complete npc index]" + "\n" + "\t" + "-1" + "\n" + "\n";
+                }
+                else
+                {
+                    label40.Text = "[npc index]" + "\n" + "\t" + textBox5.Text + "\n" + "\n";
+                    label41.Text = "[complete npc index]" + "\n" + "\t" + textBox25.Text + "\n" + "\n";
+                }
             }
 
-            //等级区间 (label42.Text)
+            //等级区间 (label42.Text) - 已初始化
             {
-                label42.Text = "[level]" + "\n" + "\t" + textBox2.Text + "\t" + textBox3.Text + "\n" + "\n";
+                if (textBox2.Text == "" && textBox3.Text == "")
+                {
+                    label42.Text = "[level]" + "\n" + "\t" + "1" + "\t" + "1000" + "\n" + "\n";
+                }
+                else
+                { 
+                    label42.Text = "[level]" + "\n" + "\t" + textBox2.Text + "\t" + textBox3.Text + "\n" + "\n";
+                }
             }
 
-            //前置任务 (label39.Text)
+            //前置任务 (label39.Text) - 已初始化
             {
-                label39.Text = "[pre required quest]"  + "\n" +
-                               "\t" + textBox4.Text    + "\n" +
-                               "[/pre required quest]" + "\n" + "\n";
+                if (label39.Text == "")
+                {
+                    label39.Text = "[pre required quest]"  + "\n" +
+                                   "\t" + "-1"             + "\n" +
+                                   "[/pre required quest]" + "\n" + "\n";
+                }
+                else
+                {
+                    label39.Text = "[pre required quest]"  + "\n" +
+                                   "\t" + textBox4.Text    + "\n" +
+                                   "[/pre required quest]" + "\n" + "\n";
+                }
             }
 
-            //任务名称&对话 (label38.Text)
+            //任务名称&对话 (label38.Text) - 已初始化
             {
                 label38.Text = "[name]"              + "\n" + "\t" + "`" + richTextBox6.Text + "`" + "\n" + "\n" +
                                "[depend message]"    + "\n" + "\t" + "`" + richTextBox3.Text + "`" + "\n" + "\n" +
@@ -297,7 +374,7 @@ namespace 文件生成器
                                "[solve message]"     + "\n" + "\t" + "`" + richTextBox5.Text + "`" + "\n" + "\n" ;
             }
 
-            //物品判定 (label43.Text)
+            //物品判定 (label43.Text) - 已初始化
             {
                 //物品判定 1 (label3.Text)
                 {
@@ -469,7 +546,7 @@ namespace 文件生成器
                 }
             }
 
-            //奖励输出 (label43.Text)
+            //奖励输出 (label43.Text) - 已初始化
             {
                 if      (comboBox5.Text == "选择")
                 {
@@ -506,17 +583,58 @@ namespace 文件生成器
                 }
             }
 
+            //对话 - 寻人
+            { 
+                if (comboBox4.Text == "寻人")
+                {
+                    if (textBox6.Text == "")
+                    {
+                        MessageBox.Show("填入需要寻找的NPC！", "警告！");
+                    }
+                    else
+                    {
+                        label41.Text = "[complete npc index]" + "\n" + "\t" + textBox6.Text + "\n" + "\n"; 
+                        label52.Text = "[type]"        + "\n" + "\t" + "`[meet npc]`" + "\n" + "\n" +
+                                       "[sub type]"    + "\n" + "\t" + "-1" + "\n"    + "\n" +
+                                       "[int data]"    + "\n" + "\t" + textBox6.Text + "\n" + 
+                                       "[/int data]"   + "\n" + "\n" +
+                                       "[reward type]" + "\n" + "\t" + "`[item]`"     + "\n" + "\n" ;
+                    }
+                }
+            }
             //组合窗体输出 (richTextBox1.Text)
             {
-                richTextBox1.Text =  label1.Text +
-                                    label40.Text +
-                                    label42.Text +
-                                    label41.Text +
-                                     label2.Text +
-                                    label43.Text +
-                                    label39.Text +
-                                    label51.Text +
-                                    label38.Text ;
+                if      (comboBox3.Text == "对话" && comboBox4.Text == "寻人")
+                {
+                    if (textBox6.Text == "")
+                    {
+                        richTextBox1.Text = "" ;
+                    }
+                    else
+                    {
+                        richTextBox1.Text = label1.Text + label40.Text + label41.Text + label51.Text + label2.Text + label42.Text + label52.Text + label43.Text + label38.Text;
+                    }
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "击杀")
+                {
+                    richTextBox1.Text = "";
+                }
+                else if (comboBox3.Text == "收集" && comboBox4.Text == "击杀指定怪物")
+                {
+                    richTextBox1.Text = "";
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "指定副本")
+                {
+                    richTextBox1.Text = "";
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "限制消耗品")
+                {
+                    richTextBox1.Text = "";
+                }
+                else if (comboBox3.Text == "通关" && comboBox4.Text == "不使用复活币")
+                {
+                    richTextBox1.Text = "";
+                }
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////
@@ -578,9 +696,10 @@ namespace 文件生成器
         //奖励 - 帮助按钮
         private void Button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("选择" + "\n" + "\t" + "填入1-8个奖励，仅供选择其中一个。" + "\n" + 
-                            "全部" + "\n" + "\t" + "填入1-8个奖励，任务完成奖励所有。" + "\n" + 
-                            "两者" + "\n" + "\t" + "在1-4填入选择奖励，在5-8填入全部奖励。" + "\n", "关于奖励选项");
+            MessageBox.Show("选择：" + "\n" + "\t" + "填入1-8个奖励，仅供选择其中一个。" + "\n" + 
+                            "全部：" + "\n" + "\t" + "填入1-8个奖励，任务完成奖励所有。" + "\n" + 
+                            "两者：" + "\n" + "\t" + "在1-4填入选择奖励，在5-8填入全部奖励。" + "\n" +
+                            "注意：" + "\n" + "\t" + "如果需要添加更多请手动在预览窗口按格式修改添加。Ps：不会修改勿动！" + "\n" , "关于奖励选项");
         }
     }
 }

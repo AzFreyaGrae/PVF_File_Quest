@@ -134,6 +134,7 @@
             this.label43 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label52 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -247,6 +248,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(79, 25);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.Text = "普通";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // label1
@@ -276,6 +278,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(79, 25);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.Text = "全职业";
             this.toolTip1.SetToolTip(this.comboBox2, "可接收并领取此任务的角色，默认所有角色。");
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged_1);
             // 
@@ -580,14 +583,16 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Enabled = false;
             this.label20.Location = new System.Drawing.Point(219, 22);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(47, 12);
+            this.label20.Size = new System.Drawing.Size(11, 12);
             this.label20.TabIndex = 9;
-            this.label20.Text = "副本 ID";
+            this.label20.Text = " ";
             // 
             // textBox8
             // 
+            this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox8.Location = new System.Drawing.Point(221, 37);
             this.textBox8.Multiline = true;
@@ -599,14 +604,16 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.Enabled = false;
             this.label19.Location = new System.Drawing.Point(144, 73);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 12);
+            this.label19.Size = new System.Drawing.Size(11, 12);
             this.label19.TabIndex = 7;
-            this.label19.Text = "参数 2";
+            this.label19.Text = " ";
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox7.Location = new System.Drawing.Point(146, 88);
             this.textBox7.Multiline = true;
@@ -618,14 +625,16 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Enabled = false;
             this.label18.Location = new System.Drawing.Point(4, 73);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 12);
+            this.label18.Size = new System.Drawing.Size(11, 12);
             this.label18.TabIndex = 5;
-            this.label18.Text = "参数 1";
+            this.label18.Text = " ";
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox6.Location = new System.Drawing.Point(6, 88);
             this.textBox6.Multiline = true;
@@ -647,19 +656,6 @@
             // 
             this.comboBox4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "不限",
-            "通关时间",
-            "被击数",
-            "不使用复活币",
-            "组队人数",
-            "难度",
-            "连击杀伤率",
-            "背击数",
-            "破招数",
-            "连击数",
-            "全图房间数",
-            "群体攻击数"});
             this.comboBox4.Location = new System.Drawing.Point(94, 37);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(116, 25);
@@ -681,15 +677,9 @@
             this.comboBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "通关",
+            "对话",
             "收集",
-            "击杀",
-            "寻人",
-            "房间",
-            "通关模板",
-            "收集模板",
-            "寻人模板",
-            "房间模板"});
+            "通关"});
             this.comboBox3.Location = new System.Drawing.Point(6, 37);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(82, 25);
@@ -867,7 +857,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(27, 25);
             this.button3.TabIndex = 34;
-            this.button3.Text = "!";
+            this.button3.Text = "?";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -1286,6 +1276,7 @@
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.label52);
             this.groupBox6.Controls.Add(this.label42);
             this.groupBox6.Controls.Add(this.label40);
             this.groupBox6.Controls.Add(this.label2);
@@ -1298,6 +1289,16 @@
             this.groupBox6.TabIndex = 34;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "预览文本数据";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(17, 293);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(32, 17);
+            this.label52.TabIndex = 33;
+            this.label52.Text = "寻人";
+            this.label52.Visible = false;
             // 
             // groupBox7
             // 
@@ -1459,6 +1460,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
     }
 }
 
